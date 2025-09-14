@@ -1,7 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import BookingForm from "./components/BookingForm";
+import { useState } from "react";
 
 export default function Home() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
     <div className="min-h-screen">
       {/* Navbar */}
@@ -28,16 +32,48 @@ export default function Home() {
                 Contact
               </a>
             </div>
-            <div className="md:hidden">
-              <button className="text-gray-600 hover:text-gray-800">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              </button>
-            </div>
+             <div className="md:hidden">
+               <button
+                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                 className="text-gray-600 hover:text-gray-800"
+               >
+                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                 </svg>
+               </button>
+             </div>
           </div>
-        </div>
-      </nav>
+         </div>
+       </nav>
+
+       {/* Mobile Menu */}
+       {isMobileMenuOpen && (
+         <div className="md:hidden bg-white border-b border-gray-200">
+           <div className="px-4 py-4 space-y-4">
+             <a
+               href="#about"
+               onClick={() => setIsMobileMenuOpen(false)}
+               className="block text-gray-600 hover:text-gray-800 font-medium transition-colors duration-200"
+             >
+               About
+             </a>
+             <a
+               href="#booking"
+               onClick={() => setIsMobileMenuOpen(false)}
+               className="block text-gray-600 hover:text-gray-800 font-medium transition-colors duration-200"
+             >
+               Book Session
+             </a>
+             <a
+               href="#contact"
+               onClick={() => setIsMobileMenuOpen(false)}
+               className="block text-gray-600 hover:text-gray-800 font-medium transition-colors duration-200"
+             >
+               Contact
+             </a>
+           </div>
+         </div>
+       )}
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen flex items-center overflow-hidden">
@@ -51,7 +87,7 @@ export default function Home() {
           style={{ backgroundImage: 'url(/banner.png)' }}
         ></div>
 
-        <div className="relative z-10 container mx-auto px-4 py-16">
+        <div className="relative z-10 container mx-auto px-4 py-8 lg:py-16">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
             <div className="flex-1 text-center lg:text-left">
               <Image
@@ -62,7 +98,7 @@ export default function Home() {
                 className="mx-auto lg:mx-0 mb-8"
                 priority
               />
-              <h1 className="font-handwritten text-5xl lg:text-7xl font-bold text-gray-800 mb-6">
+              <h1 className="font-handwritten text-4xl lg:text-7xl font-bold text-gray-800 mb-6">
                 Welcome to Melrose Tutor Club
               </h1>
               <p className="text-xl text-gray-600 mb-8 max-w-2xl">
@@ -72,13 +108,13 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a
                   href="#booking"
-                  className="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl"
+                  className="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 px-6 lg:py-3 lg:px-8 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl text-center"
                 >
                   Book Free Session
                 </a>
                 <a
                   href="#contact"
-                  className="border-2 border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200"
+                  className="border-2 border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white font-semibold py-2 px-6 lg:py-3 lg:px-8 rounded-lg transition-colors duration-200 text-center"
                 >
                   Contact Us
                 </a>
@@ -99,7 +135,7 @@ export default function Home() {
       </section>
 
       {/* Booking Section */}
-      <section id="booking" className="py-24 bg-white">
+      <section id="booking" className="py-12 lg:py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -116,7 +152,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-16 bg-white">
+      <section id="about" className="py-8 lg:py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="font-handwritten text-4xl font-bold text-gray-800 mb-8">
@@ -158,7 +194,7 @@ export default function Home() {
 
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 bg-gray-50">
+      <section id="contact" className="py-8 lg:py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="font-handwritten text-4xl font-bold text-gray-800 mb-4">
@@ -200,7 +236,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-12">
+      <footer className="bg-gray-800 text-white py-8 lg:py-12">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8">
             <div>

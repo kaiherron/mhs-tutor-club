@@ -407,13 +407,13 @@ export default function BookingForm() {
   const renderDayStep = () => (
     <div className="text-center">
       <h3 className="text-2xl font-bold text-gray-800 mb-6">What day works best for you?</h3>
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-4 max-w-2xl mx-auto">
-        {days.map((day) => (
-          <button
-            key={day.value}
-            onClick={() => handleDaySelect(day.value)}
-            className="p-6 rounded-xl bg-gray-100 hover:bg-gray-200 border-2 border-transparent hover:border-gray-300 transition-all duration-200 hover:scale-105"
-          >
+       <div className="grid grid-cols-1 md:grid-cols-5 gap-4 max-w-2xl mx-auto">
+         {days.map((day) => (
+           <button
+             key={day.value}
+             onClick={() => handleDaySelect(day.value)}
+             className="p-4 lg:p-6 rounded-xl bg-gray-100 hover:bg-gray-200 border-2 border-transparent hover:border-gray-300 transition-all duration-200 hover:scale-105"
+           >
             <div className="text-lg font-bold text-gray-800">{day.short}</div>
             <div className="text-sm text-gray-600">{day.label}</div>
           </button>
@@ -431,13 +431,13 @@ export default function BookingForm() {
   const renderTutorStep = () => (
     <div className="text-center">
       <h3 className="text-2xl font-bold text-gray-800 mb-6">Choose your tutor</h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-        {availableTutors.map((tutor) => (
-          <button
-            key={tutor.id}
-            onClick={() => handleTutorSelect(tutor.id)}
-            className="p-6 rounded-xl bg-white border-2 border-gray-200 hover:border-gray-400 transition-all duration-200 hover:scale-105 text-left"
-          >
+       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+         {availableTutors.map((tutor) => (
+           <button
+             key={tutor.id}
+             onClick={() => handleTutorSelect(tutor.id)}
+             className="p-4 lg:p-6 rounded-xl bg-white border-2 border-gray-200 hover:border-gray-400 transition-all duration-200 hover:scale-105 text-left"
+           >
             <div className="text-xl font-bold text-gray-800 mb-2">{tutor.name}</div>
             <div className="text-gray-600 text-sm">
               Specializes in {selectedSubject} ({selectedLevel})
@@ -457,15 +457,15 @@ export default function BookingForm() {
   const renderTimeStep = () => (
     <div className="text-center">
       <h3 className="text-2xl font-bold text-gray-800 mb-6">What time works for you?</h3>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-xl mx-auto">
-        {availableTimes.map((time) => {
-          const isAvailable = checkAvailability(selectedTutor, selectedDay, time);
-          return (
-            <button
-              key={time}
-              onClick={() => isAvailable && handleTimeSelect(time)}
-              disabled={!isAvailable}
-              className={`p-4 rounded-xl border-2 transition-all duration-200 ${
+       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-xl mx-auto">
+         {availableTimes.map((time) => {
+           const isAvailable = checkAvailability(selectedTutor, selectedDay, time);
+           return (
+             <button
+               key={time}
+               onClick={() => isAvailable && handleTimeSelect(time)}
+               disabled={!isAvailable}
+               className={`p-3 lg:p-4 rounded-xl border-2 transition-all duration-200 ${
                 isAvailable
                   ? 'bg-green-100 hover:bg-green-200 border-green-300 hover:scale-105'
                   : 'bg-red-100 border-red-300 cursor-not-allowed opacity-50'
@@ -656,13 +656,13 @@ export default function BookingForm() {
   const renderClassStep = () => (
     <div className="text-center">
       <h3 className="text-2xl font-bold text-gray-800 mb-6">Which {selectedSubject} class?</h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-xl mx-auto">
-        {availableClasses.map((className) => (
-          <button
-            key={className}
-            onClick={() => handleClassSelect(className)}
-            className="p-6 rounded-xl bg-gray-100 hover:bg-gray-200 border-2 border-transparent hover:border-gray-300 transition-all duration-200 hover:scale-105"
-          >
+       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-xl mx-auto">
+         {availableClasses.map((className) => (
+           <button
+             key={className}
+             onClick={() => handleClassSelect(className)}
+             className="p-4 lg:p-6 rounded-xl bg-gray-100 hover:bg-gray-200 border-2 border-transparent hover:border-gray-300 transition-all duration-200 hover:scale-105"
+           >
             <div className="text-lg font-bold text-gray-800">{className}</div>
           </button>
         ))}
@@ -703,7 +703,7 @@ export default function BookingForm() {
     <>
       <div className="bg-white rounded-lg border border-gray-200">
         {renderStepIndicator()}
-        <div className="p-8">
+        <div className="p-4 lg:p-8">
           {renderCurrentStep()}
         </div>
       </div>
@@ -729,7 +729,7 @@ export default function BookingForm() {
       {/* Book Another Modal */}
       {showBookAnother && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg p-8 max-w-md mx-4">
+          <div className="bg-white rounded-lg p-6 lg:p-8 max-w-md mx-4">
             <h3 className="text-xl font-bold text-gray-800 mb-4">Great! Your appointment is booked.</h3>
             <p className="text-gray-600 mb-6">Would you like to book another appointment?</p>
             <div className="flex space-x-4">
