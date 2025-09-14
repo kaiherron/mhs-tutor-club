@@ -1,0 +1,48 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Tutor {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  subjects  Json     // Store subjects as JSON with classes and levels
+  availability Json  // Store availability as JSON
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  appointments Appointment[]
+
+  @@map("tutors")
+}
+
+model Appointment {
+  id           String   @id @default(cuid())
+  studentName  String
+  email        String
+  phone        String?
+  grade        String
+  subject      String
+  className    String   // e.g., "Algebra 1", "English 1"
+  level        String   // e.g., "CP", "Honors", "AP"
+  tutorId      String
+  day          String   // e.g., "monday", "tuesday"
+  time         String   // e.g., "14:41", "15:11"
+  date         DateTime
+  status       String   @default("confirmed") // confirmed, cancelled, completed
+  notes        String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  tutor Tutor @relation(fields: [tutorId], references: [id], onDelete: Cascade)
+
+  @@map("appointments")
+}

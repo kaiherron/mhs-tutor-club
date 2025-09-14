@@ -1,0 +1,70 @@
+{
+  "tutors": [
+    {
+      "id": "achraf-boukirou",
+      "name": "Achraf Boukirou",
+      "email": "achraf.boukirou@melroseschools.com",
+      "subjects": {
+        "Mathematics": {
+          "Algebra 1": ["CP", "Honors"],
+          "Geometry": ["CP", "Honors"],
+          "Algebra 2": ["CP", "Honors"],
+          "Precalculus": ["CP", "Honors"]
+        },
+        "Science": {
+          "Biology": ["CP", "Honors"],
+          "Chemistry": ["CP", "Honors", "AP"],
+          "Physics": ["CP", "Honors", "AP"]
+        },
+        "History": {
+          "World History": ["CP", "Honors", "AP"],
+          "US 1": ["CP", "Honors", "AP"]
+        },
+        "English": {
+          "English 1": ["CP", "Honors"],
+          "English 2": ["CP", "Honors"]
+        }
+      },
+      "availability": {
+        "monday": ["14:41", "15:11", "15:41", "16:11", "16:41"],
+        "tuesday": ["14:41", "15:11", "15:41", "16:11", "16:41"],
+        "wednesday": ["14:41", "15:11", "15:41", "16:11", "16:41"],
+        "thursday": ["14:41", "15:11", "15:41", "16:11", "16:41"],
+        "friday": ["14:41", "15:11", "15:41", "16:11", "16:41"]
+      }
+    },
+    {
+      "id": "ritik-nayyar",
+      "name": "Ritik Nayyar",
+      "email": "ritik.nayyar@melroseschools.com",
+      "subjects": {
+        "Mathematics": {
+          "Algebra 1": ["CP", "Honors"],
+          "Geometry": ["CP", "Honors"],
+          "Algebra 2": ["CP", "Honors"],
+          "Precalculus": ["CP", "Honors"]
+        },
+        "Science": {
+          "Biology": ["CP", "Honors"],
+          "Chemistry": ["CP", "Honors", "AP"],
+          "Physics": ["CP", "Honors", "AP"]
+        },
+        "History": {
+          "World History": ["CP", "Honors", "AP"],
+          "US 1": ["CP", "Honors", "AP"]
+        },
+        "English": {
+          "English 1": ["CP", "Honors"],
+          "English 2": ["CP", "Honors"]
+        }
+      },
+      "availability": {
+        "monday": ["14:41", "15:11", "15:41", "16:11", "16:41"],
+        "tuesday": ["14:41", "15:11", "15:41", "16:11", "16:41"],
+        "wednesday": ["14:41", "15:11", "15:41", "16:11", "16:41"],
+        "thursday": ["14:41", "15:11", "15:41", "16:11", "16:41"],
+        "friday": ["14:41", "15:11", "15:41", "16:11", "16:41"]
+      }
+    }
+  ]
+}
